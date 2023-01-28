@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | IP Address Tracker</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>IP Address Tracker</h1>
+      <form action="#">
+        <input
+          id="searchBar"
+          type="text"
+          placeholder="Search for any IP address or domain"
+        />
+        <button id="confirmeButton">
+          <img src="./images/icon-arrow.svg" alt="Search button" />
+        </button>
+      </form>
+    </header>
+    <section class="info-container">
+      <ul>
+        <li>
+          <div>IP Address</div>
+          <div class="info-container-data" data-IP>0.0.0.0</div>
+        </li>
+        <li>
+          <div>Location</div>
+          <div class="info-container-data" data-Location>Miensk</div>
+        </li>
+        <li>
+          <div>Timezone</div>
+          <div class="info-container-data" data-Timezone>UTC +2</div>
+        </li>
+        <li>
+          <div>ISP</div>
+          <div class="info-container-data" data-ISP>American satellite</div>
+        </li>
+      </ul>
+    </section>
+    <footer id="map"></footer>
+    <dialog id="ErrorMessage" class="">
+      <h2>My goddness</h2>
+      <div>The inputted IP address is wrong or doesn't exist</div>
+      <button id="closeButton">Close</button>
+    </dialog>
+  </body>
+</html>
