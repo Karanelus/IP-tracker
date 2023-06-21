@@ -19,6 +19,7 @@ const mapPosIcon = L.icon({
   iconUrl: "images/icon-location.svg",
   iconSize: [46, 56],
   iconAnchor: [23, 56],
+  popupAnchor: [-2, -40],
 });
 
 submitWroteAddress.addEventListener("submit", (e) => {
