@@ -248,6 +248,10 @@ dialog button {
     --Rem_size: 14px;
   }
 
+  body {
+    overflow: auto;
+  }
+
   /*header part*/
 
   h1 {
