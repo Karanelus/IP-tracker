@@ -17,19 +17,19 @@ const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 const mapPosIcon = L.icon({
   iconUrl: "images/icon-location.svg",
-  iconSize: [35, 45],
+  iconSize: [46, 56],
   iconAnchor: [40, 40],
 });
 
 submitWroteAddress.addEventListener("submit", (e) => {
+  e.preventDefault();
+
   let API_New_Address = `https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_1yvTUi8OUizYIfLHnZkD4z1Ufihtk&ipAddress=${submitContent.value.trim()}`;
-  submitContent.value = "";
   fetch(API_New_Address)
     .then((response) => response.json())
     .then((data) => dataTaking(data))
     .catch((error) => showErrorMessage(error));
-  console.log(e);
-  return false;
+  submitContent.value = "";
 });
 
 const dataTaking = (data) => {
@@ -52,7 +52,7 @@ const dataTaking = (data) => {
   containerISP.innerText = IPtaken_isp;
   containerTimezone.innerText = `UPC ${IPtaken_timezone}`;
   containerLocation.innerText = `${IPtaken_region} ,${IPtaken_country}`;
-  map_leaflet.setView([IPlat, IPlng], 15);
+  map_leaflet.setView([IPlat, IPlng], 0);
   L.marker([IPlat, IPlng], { icon: mapPosIcon }).addTo(map_leaflet);
   L.marker([IPlat, IPlng], { icon: mapPosIcon })
     .addTo(map_leaflet)
@@ -66,5 +66,4 @@ const showErrorMessage = (e) => {
 
 errorMessageBlockCloseButton.addEventListener("click", () => {
   errorMessageBlock.close();
-  errorMessageBlock.classList.remove("animate");
 });
