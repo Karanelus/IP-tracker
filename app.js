@@ -18,7 +18,7 @@ const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 const mapPosIcon = L.icon({
   iconUrl: "images/icon-location.svg",
   iconSize: [46, 56],
-  iconAnchor: [46, 28],
+  iconAnchor: [23, 56],
 });
 
 submitWroteAddress.addEventListener("submit", (e) => {
