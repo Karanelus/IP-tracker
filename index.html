@@ -3,13 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
     <title>IP Address Tracker</title>
     <link rel="stylesheet" href="./styles.css" />
     <link
@@ -27,37 +21,31 @@
   </head>
   <body>
     <header>
-      <h1>IP Address Tracker</h1>
-      <div>
-        <form>
-          <input
-            id="searchBar"
-            type="text"
-            placeholder="Search for any IP address or domain"
-          />
-          <button id="confirmeButton"></button>
+      <div class="searchBar">
+        <h1>IP Address Tracker</h1>
+        <form class="searchBar__input">
+          <input id="searchBar" type="text" placeholder="Search for any IP address or domain" />
+          <button id="confirmeButton"><img src="./images/icon-arrow.svg" alt="" /></button>
         </form>
       </div>
     </header>
-    <section class="info-container">
-      <ul>
-        <li>
-          <div>IP Address</div>
-          <div class="info-container-data" data-IP>0.0.0.0</div>
-        </li>
-        <li>
-          <div>Location</div>
-          <div class="info-container-data" data-Location>Miensk</div>
-        </li>
-        <li>
-          <div>Timezone</div>
-          <div class="info-container-data" data-Timezone>UTC +2</div>
-        </li>
-        <li>
-          <div>ISP</div>
-          <div class="info-container-data" data-ISP>American satellite</div>
-        </li>
-      </ul>
+    <section class="infoContainer">
+      <div class="infoContainer__info" data-IP>
+        <p>IP Address</p>
+        <h2 class="info-container-data">0.0.0.0</h2>
+      </div>
+      <div class="infoContainer__info" data-Location>
+        <p>Location</p>
+        <h2 class="info-container-data">Miensk</h2>
+      </div>
+      <div class="infoContainer__info" data-Timezone>
+        <p>Timezone</p>
+        <h2 class="info-container-data">UTC +2</h2>
+      </div>
+      <div class="infoContainer__info" data-ISP>
+        <p>ISP</p>
+        <h2 class="info-container-data">American satellite</h2>
+      </div>
     </section>
     <footer id="map"></footer>
     <dialog id="ErrorMessage" class="">
